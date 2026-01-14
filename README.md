@@ -15,7 +15,7 @@ Ensure you have the following installed on your system:
 
 1. Open your PostgreSQL client (e.g., pgAdmin or terminal).
 2. Create a new database named `infocenter_db`.
-3. Locate the `database commands.txt` file in the root directory.
+3. Locate the `dab.sql` file in the root directory.
 4. Run the SQL commands from this file to initialize the tables and schema. 
    *(Note: The backend is configured to update the schema automatically (`spring.jpa.hibernate.ddl-auto=update`), but running the script ensures all constraints are set up correctly.)*
 
@@ -71,4 +71,3 @@ Ensure you have the following installed on your system:
 
 - **infocenter-ai/**: Frontend source code (React, Vite).
 - **universitychatbot/**: Backend source code (Spring Boot).
-- **...txt files**: Documentation and database specifications.
