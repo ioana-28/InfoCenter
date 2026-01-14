@@ -1,0 +1,201 @@
+/* StudentProfile.css */
+
+/* 1. Page Container (Matches other pages) */
+.profile-container {
+  width: 100%;
+  min-height: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--bg-page, #e3f2fd); /* Baby Blue Background */
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+/* 2. Main Profile Card */
+.profile-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 700px; /* Slightly narrower for a focused profile view */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px -5px rgba(15, 42, 85, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.4s ease-out;
+}
+
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 3. Header Section (Gradient Background) */
+.profile-header-section {
+  background: linear-gradient(135deg, #0f2a55 0%, #1e40af 100%); /* Royal Blue Gradient */
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.profile-avatar-wrapper {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 4px;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f2a55; /* Icon matches brand color */
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.profile-role-badge {
+  margin-top: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* 4. Content Area */
+.profile-content {
+  padding: 2.5rem;
+}
+
+.profile-section h3 {
+  color: #0f2a55;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.75rem;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+/* Info Item Styling */
+.info-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.info-item:hover {
+  border-color: #cbd5e1;
+  background-color: #f1f5f9;
+}
+
+.info-label {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.info-value {
+  font-weight: 600;
+  color: #0f172a; /* Dark Navy */
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-icon {
+  color: #3b82f6; /* Accent blue for icons inside the value */
+}
+
+/* 5. Buttons Section */
+.profile-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end; /* Align buttons to the right */
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #475569;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .profile-container {
+    padding: 1rem;
+  }
+  
+  .profile-card {
+    max-width: 100%;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+  }
+  
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .info-value {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

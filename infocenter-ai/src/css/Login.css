@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Matching Chatbot Variables */
+    --royal-blue: #0f2a55;
+    --royal-light: #1e3a6b;
+    --bg-page: #e3f2fd; /* Baby Blue */
+    --bg-card: #ffffff; /* White */
+    --text-main: #000000; /* Pure Black */
+    --text-muted: #555555; /* Dark Gray */
+    --border-color: #cbd5e1;
+    --input-bg: #f8fafc;
+    --error-color: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- Page Layout --- */
+.login-page {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-page); /* Baby Blue Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* --- Card Design --- */
+.login-card {
+    background-color: var(--bg-card); /* White Card */
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem;
+    border-radius: 24px; /* Modern rounded corners */
+    box-shadow: 0 10px 25px -5px rgba(15, 42, 85, 0.15), 0 8px 10px -6px rgba(15, 42, 85, 0.1);
+    color: var(--text-main); /* Black Text */
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Back Button --- */
+.back-btn {
+    background: transparent;
+    border: none;
+    color: var(--royal-blue);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 2rem;
+    transition: transform 0.2s;
+}
+
+.back-btn:hover {
+    transform: translateX(-4px);
+}
+
+/* --- Logo Section --- */
+.login-logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-circle {
+    width: 64px;
+    height: 64px;
+    background-color: var(--royal-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.logo-icon {
+    color: white; /* White icon on Dark Blue */
+    width: 32px;
+    height: 32px;
+}
+
+.login-title {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-main); /* Black Text */
+}
+
+.login-subtitle {
+    margin-top: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- Form --- */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Error Message */
+.error-box {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: var(--error-color);
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Inputs */
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    color: #94a3b8;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    transition: color 0.2s;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px 14px 48px; /* Left padding makes room for icon */
+    border: 2px solid transparent; /* Prepare for focus border */
+    background-color: var(--input-bg);
+    border-radius: 12px;
+    font-size: 1rem;
+    color: var(--text-main); /* Black Text */
+    outline: none;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.input-group input::placeholder {
+    color: #94a3b8;
+}
+
+.input-group:focus-within input {
+    background-color: #fff;
+    border-color: var(--royal-blue);
+    box-shadow: 0 0 0 4px rgba(15, 42, 85, 0.1);
+}
+
+.input-group:focus-within .input-icon {
+    color: var(--royal-blue);
+}
+
+/* Login Button */
+.login-btn {
+    background-color: var(--royal-blue);
+    color: white; /* White Text on Dark Blue */
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 0.5rem;
+}
+
+.login-btn:hover {
+    background-color: var(--royal-light);
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+/* Register Link */
+.register-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+}
+
+.register-link {
+    color: var(--royal-blue);
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+.icon-small {
+    width: 18px;
+    height: 18px;
+}

@@ -1,0 +1,221 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+
+.card {
+    padding: 2em;
+}
+
+.read-the-docs {
+    color: #888;
+}
+
+/* General styling for all pages */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8; /* Light blue-gray background */
+    color: #333; /* Dark gray text for better readability */
+}
+
+/* Styling for containers */
+.login-container, .register-container, .chatbot-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ffffff; /* White background for content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+.login-container h1, .register-container h1, .chatbot-container h1 {
+    color: #0077cc; /* New shade of blue */
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px;
+    background-color: #0077cc; /* New shade of blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005fa3; /* Darker blue for hover effect */
+}
+
+/* Links */
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for Login and Register pages */
+.login-container, .register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1, .register-container h1 {
+    color: blue;
+    text-align: center;
+}
+
+.login-container form, .register-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label, .register-container label {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.login-container input, .register-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container button, .register-container button {
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-container button:hover, .register-container button:hover {
+    background-color: darkblue;
+}
+
+.login-container p, .register-container p {
+    text-align: center;
+}
+
+/* Styling for Chatbot page */
+.chatbot-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-container h1 {
+    color: blue;
+    text-align: center;
+}
+
+.chat-window {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.message-form {
+    display: flex;
+}
+
+.message-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.message-form button {
+    padding: 10px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message-form button:hover {
+    background-color: #005fa3;
+}

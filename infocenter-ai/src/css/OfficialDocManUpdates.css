@@ -1,0 +1,31 @@
+.view-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.9rem;
+    color: #2563eb;
+    text-decoration: none;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.view-link:hover {
+    text-decoration: underline;
+}
+
+.loading-state {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+    padding: 20px;
+    justify-content: center;
+}
+
+.file-input-container {
+    padding: 1rem;
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    text-align: center;
+}

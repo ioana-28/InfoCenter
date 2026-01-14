@@ -1,0 +1,165 @@
+/* StudentLayout.css */
+/* StudentLayout.css */
+
+/* 1. The Container: Takes up the full viewport, no window scrollbars */
+.student-container {
+  display: flex;
+  height: 100vh; 
+  width: 100vw;
+  overflow: hidden; /* Prevents double scrollbars */
+  background-color: #f4f4f9;
+}
+
+/* 2. The Sidebar: Fixed width, static */
+.student-sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.student-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.student-sidebar-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.student-close-btn {
+  display: none; /* Hidden on desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+}
+
+/* Mobile Header (Hidden on Desktop) */
+.student-mobile-header {
+  display: none;
+  height: 60px;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  align-items: center;
+  padding: 0 1rem;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.student-menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.student-mobile-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.student-sidebar-overlay {
+  display: none;
+}
+
+/* 3. The Main Area: This is where the scrollbar belongs */
+.student-main {
+  flex: 1; /* Fills remaining width */
+  overflow-y: auto; /* Enables scrolling for the content only */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .student-container {
+    flex-direction: column;
+  }
+
+  .student-mobile-header {
+    display: flex;
+  }
+
+  .student-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    box-shadow: 4px 0 12px rgba(0,0,0,0.1);
+  }
+
+  .student-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .student-close-btn {
+    display: block;
+  }
+
+  .student-sidebar-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 900;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .student-sidebar-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.student-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Nav Item Styling */
+.student-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #64748b;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.student-nav-item:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+/* The Active Class (from NavLink) */
+.student-nav-item.active {
+  background-color: #e2e8f0; /* Or your brand color */
+  color: #2563eb; /* Blue text */
+  font-weight: 600;
+}
+

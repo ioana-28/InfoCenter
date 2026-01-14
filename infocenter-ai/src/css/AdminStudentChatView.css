@@ -1,0 +1,273 @@
+/* src/css/AdminStudentChatView.css */
+
+.admin-chat-view {
+    padding: 2rem;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.chat-container {
+    display: flex;
+    height: calc(100vh - 180px);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    position: relative; /* Needed for mobile absolute positioning if used */
+}
+
+/* --- Sidebar --- */
+.chat-sidebar {
+    width: 320px;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.btn-back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.btn-back:hover {
+    color: #334155;
+}
+
+.conversation-list {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.conversation-item {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    transition: all 0.2s;
+}
+
+.conversation-item:hover {
+    background-color: #f8fafc;
+}
+
+.conversation-item.active {
+    background-color: #f0f9ff;
+    border-left-color: #0284c7;
+}
+
+.conv-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #334155;
+}
+
+.conv-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+/* --- Main Chat Area --- */
+.chat-main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8fafc;
+    position: relative;
+    min-width: 0;
+}
+
+.chat-header {
+    padding: 1rem 1.5rem;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Mobile Back Button (Hidden by default on Desktop) */
+.btn-mobile-back {
+    display: none; 
+    background: none;
+    border: none;
+    padding: 4px;
+    margin-right: 4px;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.user-avatar-sm {
+    background: #eff6ff;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-meta-info {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 400;
+}
+
+/* --- Messages --- */
+.messages-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.message-row {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.message-row.user {
+    justify-content: flex-end;
+}
+
+.message-row.bot {
+    justify-content: flex-start;
+}
+
+.avatar-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.avatar-icon.bot {
+    background: #f1f5f9;
+}
+
+.avatar-icon.user {
+    background: #dbeafe;
+}
+
+.message-bubble {
+    max-width: 70%;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    line-height: 1.5;
+}
+
+.message-row.user .message-bubble {
+    background-color: #2563eb;
+    color: white;
+    border-top-right-radius: 2px;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.message-row.bot .message-bubble {
+    background-color: white;
+    color: #1e293b;
+    border-top-left-radius: 2px;
+    border: 1px solid #e2e8f0;
+}
+
+.message-timestamp {
+    font-size: 0.7rem;
+    margin-top: 6px;
+    text-align: right;
+    opacity: 0.8;
+}
+
+.message-row.user .message-timestamp {
+    color: #bfdbfe;
+}
+
+.message-row.bot .message-timestamp {
+    color: #94a3b8;
+}
+
+.empty-state {
+    padding: 2rem;
+    text-align: center;
+    color: #94a3b8;
+}
+
+.empty-chat-area {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+}
+
+/* --- RESPONSIVE / MOBILE STYLES --- */
+@media (max-width: 768px) {
+    .admin-chat-view {
+        padding: 1rem; /* Less padding on mobile */
+    }
+
+    .chat-container {
+        height: calc(100vh - 120px); /* Adjust height for mobile headers */
+    }
+
+    /* By default on mobile: Show sidebar, hide main chat */
+    .chat-sidebar {
+        width: 100%;
+        border-right: none;
+    }
+    
+    .chat-main-area {
+        display: none;
+        width: 100%;
+    }
+
+    /* When a chat is selected (we will toggle this class in JS) */
+    .chat-container.mobile-chat-open .chat-sidebar {
+        display: none;
+    }
+
+    .chat-container.mobile-chat-open .chat-main-area {
+        display: flex;
+    }
+
+    /* Show the back button on mobile */
+    .btn-mobile-back {
+        display: block;
+    }
+
+    /* Adjust bubbles for small screens */
+    .message-bubble {
+        max-width: 85%;
+        padding: 0.75rem;
+    }
+
+    .messages-container {
+        padding: 1rem;
+    }
+}

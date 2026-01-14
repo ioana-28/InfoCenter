@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Design System Variables */
+    --royal-blue: #0f2a55;
+    --royal-light: #1e3a6b;
+    --bg-page: #e3f2fd;
+    --bg-card: #ffffff;
+    --text-main: #000000;
+    --text-muted: #555555;
+    --border-color: #cbd5e1;
+    --input-bg: #f8fafc;
+    --error-bg: #fef2f2;
+    --error-text: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden; /* Prevents body scroll bars */
+}
+
+/* --- Page Layout --- */
+.register-page {
+    height: 100vh; /* Force full viewport height */
+    width: 100vw;
+    background-color: var(--bg-page);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* --- Card Design --- */
+.register-card {
+    background-color: var(--bg-card);
+    width: 100%;
+    max-width: 420px; /* Reduced width for a cleaner look */
+    padding: 1.5rem 2rem; /* reduced vertical padding significantly */
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(15, 42, 85, 0.15);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    /* Ensure it doesn't overflow screen */
+    max-height: 95vh;
+    overflow-y: auto; /* Safety scroll inside card only if screen is tiny */
+}
+
+/* --- Back Button --- */
+.back-btn {
+    background: transparent;
+    border: none;
+    color: var(--royal-blue);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 0.5rem; /* Minimal margin */
+    align-self: flex-start;
+}
+
+.back-btn:hover {
+    transform: translateX(-2px);
+}
+
+.back-btn .icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- Header Section --- */
+.register-header {
+    text-align: center;
+    margin-bottom: 1rem; /* Tightened margin */
+}
+
+.icon-circle {
+    width: 42px; /* Much smaller (was 64px) */
+    height: 42px;
+    background-color: var(--royal-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+}
+
+.header-icon {
+    color: white;
+    width: 20px;
+    height: 20px;
+}
+
+.register-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.register-header p {
+    margin-top: 0.25rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* --- Form --- */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Very tight gap between fields */
+}
+
+.error-message {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 2px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    color: #94a3b8;
+    width: 16px; /* Smaller icon */
+    height: 16px;
+    pointer-events: none;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 10px 14px 10px 36px; /* Compact padding */
+    border: 1px solid var(--border-color); /* Thinner border */
+    background-color: var(--input-bg);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    outline: none;
+    transition: all 0.2s;
+    height: 40px; /* Fixed compact height */
+}
+
+.input-wrapper input:focus {
+    background-color: #fff;
+    border-color: var(--royal-blue);
+    box-shadow: 0 0 0 3px rgba(15, 42, 85, 0.1);
+}
+
+.input-wrapper:focus-within .input-icon {
+    color: var(--royal-blue);
+}
+
+/* Register Button */
+.register-button {
+    background-color: var(--royal-blue);
+    color: white;
+    border: none;
+    padding: 10px; /* Compact button */
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 0.5rem;
+    height: 42px;
+}
+
+.register-button:hover {
+    background-color: var(--royal-light);
+}
+
+.btn-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* --- Login Link --- */
+.login-link {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+}
+
+.login-link button {
+    background: none;
+    border: none;
+    color: var(--royal-blue);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 0;
+    margin-left: 4px;
+}
+
+.login-link button:hover {
+    text-decoration: underline;
+}
+
+/* Custom Scrollbar for the card if it overflows on tiny screens */
+.register-card::-webkit-scrollbar {
+    width: 4px;
+}
+
+.register-card::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}

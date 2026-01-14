@@ -1,0 +1,109 @@
+.user-management-page {
+    padding: 2rem;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.users-table th {
+    background: #f8fafc;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: #475569;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.users-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #1e293b;
+}
+
+.users-table tr:last-child td {
+    border-bottom: none;
+}
+
+.users-table tr:hover {
+    background-color: #f8fafc;
+}
+
+.btn-delete {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #fee2e2;
+    background: #fff1f2;
+    color: #e11d48;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-delete:hover {
+    background: #ffe4e6;
+    border-color: #fecdd3;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.role-badge.admin {
+    background-color: #e0e7ff;
+    color: #3730a3;
+}
+
+.role-badge.student {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: #64748b;
+}
+
+/* Add this to UserManagement.css */
+
+.btn-view-chat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Matches gap: 6px from your inline style roughly */
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #e0f2fe; /* Your blue background */
+    color: #0284c7;       /* Your blue text */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    width: auto;
+    height: aut
+}
+
+.btn-view-chat:hover {
+    background: #bae6fd; /* Slightly darker blue on hover */
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}

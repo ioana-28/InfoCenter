@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Consistent Theme Variables */
+  --royal-blue: #0f2a55;
+  --royal-light: #1e3a6b;
+  --bg-page: #e3f2fd;      /* Baby Blue */
+  --bg-card: #ffffff;      /* White */
+  --text-main: #0f172a;    /* Navy Black */
+  --text-muted: #64748b;   /* Slate Gray */
+  --border-color: #cbd5e1;
+  --input-bg: #f8fafc;     /* Very Light Gray */
+  --success-bg: #ecfdf5;   /* Light Green */
+  --success-text: #047857; /* Dark Green */
+}
+
+/* --- Page Layout --- */
+.student-page {
+  
+  /* NEW: Fits the parent container (student-main) */
+  min-height: 100%; 
+  width: 100%;
+  
+  /* Keep the rest! */
+  background-color: var(--bg-page);
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Keeps card centered vertically if content is short */
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* --- Card Container --- */
+.request-card {
+  background-color: var(--bg-card);
+  width: 100%;
+  max-width: 520px;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px -5px rgba(15, 42, 85, 0.15);
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .student-page {
+    padding: 1rem;
+  }
+  .request-card {
+    padding: 1.5rem;
+  }
+}
+
+/* --- Typography --- */
+.request-card h2 {
+  margin: 0 0 0.5rem 0;
+  color: var(--royal-blue);
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 0 0 2rem 0;
+  color: var(--text-muted);
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* --- Form Styles --- */
+.request-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.request-form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: -0.5rem; /* Visually connect label to input */
+  margin-left: 4px;
+}
+
+/* Inputs & Textarea */
+.request-form select,
+.request-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1rem;
+  color: var(--text-main);
+  background-color: var(--input-bg);
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  appearance: none;
+}
+
+/* Add custom height for textarea */
+.request-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Focus States */
+.request-form select:focus,
+.request-form textarea:focus {
+  background-color: #ffffff;
+  border-color: var(--royal-blue);
+  box-shadow: 0 0 0 4px rgba(15, 42, 85, 0.1);
+}
+
+/* Submit Button */
+.request-form button {
+  margin-top: 1rem;
+  background-color: var(--royal-blue);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.request-form button:hover {
+  background-color: var(--royal-light);
+  transform: translateY(-1px);
+}
+
+.request-form button:active {
+  transform: scale(0.98);
+}
+
+/* --- Success Message --- */
+.success-box {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid #d1fae5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .student-page {
+    padding: 1rem;
+    align-items: flex-start; /* Better scrolling on mobile */
+  }
+  .request-card {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  .request-card h2 {
+    font-size: 1.5rem;
+  }
+}

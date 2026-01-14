@@ -1,0 +1,157 @@
+/* --- History Page Container --- */
+/* Ensures the content is centered and has the baby-blue background */
+.student-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Aligns to top so it doesn't float in middle if list is long */
+  background-color: var(--bg-page, #e3f2fd); /* Fallback to baby blue if var missing */
+}
+
+/* --- The White Card (CRITICAL for visibility) --- */
+.history-card {
+  background-color: #ffffff; /* Force solid white */
+  width: 100%;
+  max-width: 900px;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(15, 42, 85, 0.08); /* Soft shadow for depth */
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Title Styling --- */
+.history-card h2 {
+  /* Use your Royal Blue, but make sure it's dark */
+  color: var(--royal-blue, #0f2a55); 
+  margin: 0 0 2rem 0;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* --- Table Styling --- */
+.history-table {
+  width: 100%;
+  border-collapse: separate; 
+  border-spacing: 0; /* Cleaner borders */
+  margin-top: 0.5rem;
+}
+
+/* Table Headers */
+.history-table th {
+  text-align: left;
+  padding: 1rem 1.5rem;
+  
+  /* darker gray-blue for better readability than standard muted text */
+  color: #475569; 
+  
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #f8fafc; /* Very light gray header bg */
+  border-bottom: 2px solid #e2e8f0;
+  
+  /* Rounded corners for the header row */
+  &:first-child { border-top-left-radius: 8px; }
+  &:last-child { border-top-right-radius: 8px; }
+}
+
+/* Table Body Cells */
+.history-table td {
+  padding: 1.25rem 1.5rem;
+  
+  /* FORCE Dark Text */
+  color: var(--text-main, #0f172a); 
+  
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+/* Row Hover Effect */
+.history-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.history-table tbody tr:hover {
+  background-color: #f8fafc; /* Subtle hover highlight */
+}
+
+/* --- Status Badges (High Contrast) --- */
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 99px; /* Pill shape */
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Approved: Green */
+.status-approved {
+  background-color: #d1fae5;
+  color: #065f46; /* Darker green for text */
+}
+
+/* Pending: Orange */
+.status-pending {
+  background-color: #ffedd5;
+  color: #9a3412; /* Darker orange for text */
+}
+
+/* Rejected: Red */
+.status-rejected {
+  background-color: #fee2e2;
+  color: #991b1b; /* Darker red for text */
+}
+
+/* --- Responsive Mobile View --- */
+@media (max-width: 768px) {
+  .student-page {
+    padding: 1rem;
+  }
+  .history-card {
+    padding: 1.5rem;
+    max-width: 100%;
+    overflow-x: auto; /* Enable horizontal scroll */
+  }
+  
+  .history-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .history-table {
+    min-width: 600px; /* Force table width */
+  }
+
+  .history-table th, 
+  .history-table td {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+.rejection-reason {
+  color: #dc2626; /* Red color for rejection reason */
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.approval-reason {
+  color: #166534; /* Green color for approval reason */
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.doc-reason {
+  max-width: 250px; /* Limit width so long reasons wrap */
+  word-wrap: break-word;
+}
