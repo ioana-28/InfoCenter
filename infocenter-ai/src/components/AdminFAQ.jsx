@@ -72,7 +72,7 @@ export default function AdminFAQ() {
   });
 
   return (
-    <AdminLayout title="Student Questions & FAQs">
+    <AdminLayout title="Student Questions">
       <div className="faq-page">
 
         {/* Modern Segmented Filter Control */}

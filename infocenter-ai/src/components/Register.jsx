@@ -100,7 +100,6 @@ export function Register({onRegister}) {
                     <div className="form-group">
                         <label>Full Name</label>
                         <div className="input-wrapper">
-                            <User className="input-icon"/>
                             <input
                                 name="fullName"
                                 value={formData.fullName}
@@ -114,7 +113,6 @@ export function Register({onRegister}) {
                     <div className="form-group">
                         <label>Email Address</label>
                         <div className="input-wrapper">
-                            <Mail className="input-icon"/>
                             <input
                                 name="email"
                                 value={formData.email}
@@ -128,7 +126,6 @@ export function Register({onRegister}) {
                     <div className="form-group">
                         <label>Password</label>
                         <div className="input-wrapper">
-                            <Lock className="input-icon"/>
                             <input
                                 type="password"
                                 name="password"
@@ -143,7 +140,6 @@ export function Register({onRegister}) {
                     <div className="form-group">
                         <label>Confirm Password</label>
                         <div className="input-wrapper">
-                            <Lock className="input-icon"/>
                             <input
                                 type="password"
                                 name="confirmPassword"

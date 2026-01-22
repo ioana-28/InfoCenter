@@ -70,7 +70,7 @@ export default function AdminLayout({ title, children }) {
                         onClick={() => setIsSidebarOpen(false)}
                     >
                         <HelpCircle size={20} />
-                        <span>FAQs</span>
+                        <span>Questions</span>
                     </NavLink>
                 </nav>
 

@@ -142,40 +142,36 @@ body {
 
 .input-wrapper {
     position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.input-icon {
-    position: absolute;
-    left: 12px;
-    color: #94a3b8;
-    width: 16px; /* Smaller icon */
-    height: 16px;
-    pointer-events: none;
+    width: 100%;
 }
 
 .input-wrapper input {
     width: 100%;
-    padding: 10px 14px 10px 36px; /* Compact padding */
-    border: 1px solid var(--border-color); /* Thinner border */
+    padding: 10px 14px;
+    border: 1px solid var(--border-color);
     background-color: var(--input-bg);
     border-radius: 8px;
     font-size: 0.9rem;
     color: var(--text-main);
     outline: none;
     transition: all 0.2s;
-    height: 40px; /* Fixed compact height */
+    height: 40px;
+}
+
+/* Fix for Chrome/Edge Autofill background color */
+.input-wrapper input:-webkit-autofill,
+.input-wrapper input:-webkit-autofill:hover, 
+.input-wrapper input:-webkit-autofill:focus, 
+.input-wrapper input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--input-bg) inset !important;
+    -webkit-text-fill-color: var(--text-main) !important;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 .input-wrapper input:focus {
     background-color: #fff;
     border-color: var(--royal-blue);
     box-shadow: 0 0 0 3px rgba(15, 42, 85, 0.1);
-}
-
-.input-wrapper:focus-within .input-icon {
-    color: var(--royal-blue);
 }
 
 /* Register Button */
