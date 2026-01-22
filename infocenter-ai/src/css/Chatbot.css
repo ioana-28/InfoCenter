@@ -357,11 +357,38 @@ body {
 
 .message-bubble {
   max-width: 80%;
-  padding: 14px 18px;
+  padding: 10px 14px;
   border-radius: 12px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.9rem; /* Smaller font */
+  line-height: 1.5;  /* Clean line-height */
+}
+
+.message-bubble h1,
+.message-bubble h2,
+.message-bubble h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.message-bubble ul,
+.message-bubble ol {
+  margin: 0.25rem 0 0.25rem 1.25rem;
+  padding: 0;
+}
+
+.message-bubble li {
+  margin-bottom: 0.15rem;
+}
+
+.message-bubble p {
+  margin: 0 0 0.5rem 0;
+}
+
+.message-bubble p:last-child {
+  margin-bottom: 0;
 }
 
 /* Bot Bubble */
