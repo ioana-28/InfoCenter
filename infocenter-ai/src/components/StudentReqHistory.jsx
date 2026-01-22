@@ -16,7 +16,7 @@ export default function StudentReqHistory({ userEmail }) {
     const fetchRequests = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/api/student/history?email=${encodeURIComponent(userEmail)}`,
+          `${import.meta.env.VITE_API_Base_URL}/student/history?email=${encodeURIComponent(userEmail)}`,
           {
             method: "GET",
             headers: {

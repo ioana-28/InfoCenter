@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/admin/requests";
+const API_URL = `${import.meta.env.VITE_API_Base_URL}/admin/requests`;
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem("token");

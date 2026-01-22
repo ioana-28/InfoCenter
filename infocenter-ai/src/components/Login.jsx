@@ -17,7 +17,7 @@ export function Login({onLogin}) {
 
     
     try {
-        const response = await fetch("http://localhost:8080/api/auth/login", {
+        const response = await fetch(`${import.meta.env.VITE_API_Base_URL}/auth/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

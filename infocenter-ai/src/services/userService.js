@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080/api/admin/stats";
+const BASE_URL = `${import.meta.env.VITE_API_Base_URL}/admin/stats`;
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem("token");

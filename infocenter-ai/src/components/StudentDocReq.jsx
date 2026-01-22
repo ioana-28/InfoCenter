@@ -31,7 +31,7 @@ export default function StudentDocReq({ userEmail }) {
 
     try {
       const response = await fetch(
-        `http://localhost:8080/api/student/requests?email=${encodeURIComponent(
+        `${import.meta.env.VITE_API_Base_URL}/student/requests?email=${encodeURIComponent(
           userEmail
         )}&documentType=${encodeURIComponent(form.type)}&details=${encodeURIComponent(form.details)}`,
         {

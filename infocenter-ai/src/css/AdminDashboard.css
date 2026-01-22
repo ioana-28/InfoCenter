@@ -110,6 +110,10 @@
 }
 
 /* --- Table Styles --- */
+.table-responsive {
+    width: 100%;
+}
+
 .dashboard-table {
     width: 100%;
     border-collapse: collapse;

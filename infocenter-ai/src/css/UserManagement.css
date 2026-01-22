@@ -96,7 +96,7 @@
     font-weight: 500;
     transition: all 0.2s;
     width: auto;
-    height: aut
+    height: auto;
 }
 
 .btn-view-chat:hover {
@@ -106,4 +106,78 @@
 .table-responsive {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile Responsive Cards */
+@media screen and (max-width: 768px) {
+    .user-management-page {
+        padding: 1rem;
+    }
+
+    .users-table {
+        background: transparent;
+        box-shadow: none;
+        overflow: visible;
+    }
+
+    .users-table, .users-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .users-table thead {
+        display: none;
+    }
+
+    .users-table tr {
+        background: white;
+        display: block;
+        margin-bottom: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e2e8f0;
+        overflow: hidden;
+    }
+
+    .users-table td {
+        display: block;
+        text-align: left;
+        padding: 1rem;
+        border-bottom: 1px solid #f1f5f9;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .users-table td:last-child {
+        border-bottom: none;
+        background: #f8fafc;
+    }
+
+    /* Style for fields with labels */
+    .users-table td[data-label="Role"],
+    .users-table td[data-label="Joined Date"] {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .users-table td[data-label="Role"]::before,
+    .users-table td[data-label="Joined Date"]::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #64748b;
+        font-size: 0.85rem;
+    }
+
+    /* Actions container */
+    .users-table td[data-label="Actions"] > div {
+        width: 100%;
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    .btn-delete, .btn-view-chat {
+        flex: 1;
+        justify-content: center;
+    }
 }

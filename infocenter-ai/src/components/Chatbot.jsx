@@ -284,7 +284,7 @@ export function Chatbot({ isLoggedIn, userEmail, onLogout, onNavigateToLogin }) 
                             <Link to="/student" className="top-nav-link">Chat</Link>
                             <Link to="/student/request" className="top-nav-link">Requests</Link>
                             <Link to="/student/history" className="top-nav-link">History</Link>
-                            <Link to="/student/faq" className="top-nav-link">FAQ</Link>
+                            <Link to="/student/faq" className="top-nav-link">Questions</Link>
                             <Link to="/student/profile" className="top-nav-link">Profile</Link>
                         </nav>
                     </div>
@@ -335,7 +335,7 @@ export function Chatbot({ isLoggedIn, userEmail, onLogout, onNavigateToLogin }) 
                             <Clock size={16}/> <span>History</span>
                         </Link>
                         <Link to="/student/faq" className="mobile-nav-item">
-                            <HelpCircle size={16}/> <span>FAQ</span>
+                            <HelpCircle size={16}/> <span>Questions</span>
                         </Link>
                         <Link to="/student/profile" className="mobile-nav-item">
                             <User size={16}/> <span>Profile</span>

@@ -145,15 +145,15 @@ export default function DocumentRequests() {
                                         {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                                     </button>
                                 </td>
-                                <td>{req.studentName || req.student?.email || "Unknown"}</td>
-                                <td>{req.documentType}</td>
-                                <td>{(req.requestDate || req.requestedAt) ? new Date(req.requestDate || req.requestedAt).toLocaleDateString() : "-"}</td>
-                                <td>
+                                <td data-label="Student Name">{req.studentName || req.student?.email || "Unknown"}</td>
+                                <td data-label="Document">{req.documentType}</td>
+                                <td data-label="Request Date">{(req.requestDate || req.requestedAt) ? new Date(req.requestDate || req.requestedAt).toLocaleDateString() : "-"}</td>
+                                <td data-label="Status">
                                     <span className={`status-badge ${req.status?.toLowerCase()}`}>
                                         {req.status}
                                     </span>
                                 </td>
-                                <td>
+                                <td data-label="Actions">
                                     {req.status === "PENDING" ? (
                                         <div style={{ display: 'flex', gap: '8px' }}>
                                             <button
@@ -184,7 +184,7 @@ export default function DocumentRequests() {
                                         </div>
                                     )}
                                 </td>
-                                <td>
+                                <td data-label="Delete">
                                     {req.status !== "PENDING" && (
                                         <button
                                             className="btn-icon-delete"

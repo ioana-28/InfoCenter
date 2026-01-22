@@ -1,9 +1,9 @@
 // src/services/driveService.js
 
-const API_URL = "http://localhost:8080/api/drive";
+const API_URL = `${import.meta.env.VITE_API_Base_URL}/drive`;
 
 // TODO: Replace with the actual Google Drive Folder ID for official documents
-const OFFICIAL_DOCS_FOLDER_ID = "1lN6l3-wkUDJT6P1j5ZDAn0Ikf1y9n_r6"; 
+const OFFICIAL_DOCS_FOLDER_ID = import.meta.env.VITE_GOOGLE_DRIVE_FOLDER_ID;
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem("token");

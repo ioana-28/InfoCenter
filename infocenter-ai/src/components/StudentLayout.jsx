@@ -54,7 +54,7 @@ export default function StudentLayout() {
             </Link>
 
             <Link to="/student/faq" className="student-nav-item" onClick={() => setIsSidebarOpen(false)}>
-              <HelpCircle size={18} /> FAQ & Support
+              <HelpCircle size={18} /> Questions & Support
             </Link>
 
             <Link to="/student/profile" className="student-nav-item" onClick={() => setIsSidebarOpen(false)}>

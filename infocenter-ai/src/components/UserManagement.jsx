@@ -103,7 +103,7 @@ export default function UserManagement() {
                                 ) : (
                                     filteredUsers.map((user, index) => (
                                         <tr key={user.id || index}>
-                                            <td>
+                                            <td data-label="Student">
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                                                     <div style={{ background: '#f1f5f9', padding: '8px', borderRadius: '50%' }}>
                                                         <User size={20} color="#64748b" />
@@ -114,13 +114,13 @@ export default function UserManagement() {
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>
+                                            <td data-label="Role">
                                                 <span className={`role-badge ${getRoleName(user).toLowerCase()}`}>
                                                     {getRoleName(user)}
                                                 </span>
                                             </td>
-                                            <td>{user.createdAt ? new Date(user.createdAt).toLocaleDateString() : "-"}</td>
-                                            <td>
+                                            <td data-label="Joined Date">{user.createdAt ? new Date(user.createdAt).toLocaleDateString() : "-"}</td>
+                                            <td data-label="Actions">
                                                 <div style={{ display: 'flex', gap: '8px' }}>
                                                     <button 
                                                         className="btn-delete"

@@ -75,7 +75,7 @@ export default function StudentFAQ() {
       <div className="faq-card">
         
         <div className="faq-header-section">
-          <h1>Student FAQ & Support</h1>
+          <h1>Questions & Support</h1>
           <p>Ask questions and view answers from the administration.</p>
         </div>
 

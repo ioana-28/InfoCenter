@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"; // Import for navigation
 import AdminLayout from "./AdminLayout";
 import { Users, Clock, FileText, MessageCircle, ArrowRight, AlertCircle, CheckCircle } from "lucide-react";
 import "../css/AdminDashboard.css";
+import "../css/AdminDashboardMobile.css";
 
 export default function AdminDashboard() {
     const navigate = useNavigate(); // Hook for navigation
@@ -31,15 +32,15 @@ export default function AdminDashboard() {
                 const headers = { Authorization: `Bearer ${token}` };
 
                 // 1. Fetch Stats (Existing)
-                const statsRes = await fetch("http://localhost:8080/api/admin/stats", { headers });
+                const statsRes = await fetch(`${import.meta.env.VITE_API_Base_URL}/admin/stats`, { headers });
                 const statsJson = statsRes.ok ? await statsRes.json() : { totalActiveStudents: 0, totalPendingRequests: 0 };
 
                 // 2. Fetch All Requests (For Activity Feed)
-                const reqRes = await fetch("http://localhost:8080/api/admin/requests", { headers });
+                const reqRes = await fetch(`${import.meta.env.VITE_API_Base_URL}/admin/requests`, { headers });
                 const reqJson = reqRes.ok ? await reqRes.json() : [];
 
                 // 3. Fetch All FAQs (For Activity Feed & Pending Count)
-                const faqRes = await fetch("http://localhost:8080/api/faqs/admin/all", { headers });
+                const faqRes = await fetch(`${import.meta.env.VITE_API_Base_URL}/faqs/admin/all`, { headers });
                 const faqJson = faqRes.ok ? await faqRes.json() : [];
 
                 // --- Process Data ---
@@ -191,43 +192,45 @@ export default function AdminDashboard() {
                             <h2>Recent Activity</h2>
                         </div>
                         {loading ? <p>Loading activity...</p> : (
-                            <table className="dashboard-table">
-                                <thead>
-                                    <tr>
-                                        <th>Type</th>
-                                        <th>User</th>
-                                        <th>Action</th>
-                                        <th>Time</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {recentActivity.length === 0 ? (
-                                        <tr><td colSpan="5">No recent activity found.</td></tr>
-                                    ) : (
-                                        recentActivity.map((item, index) => (
-                                            <tr key={index}>
-                                                <td>
-                                                    {item.type === "Document" ? 
-                                                        <FileText size={16} className="text-muted"/> : 
-                                                        <MessageCircle size={16} className="text-muted"/>
-                                                    }
-                                                </td>
-                                                <td className="fw-500">{item.user}</td>
-                                                <td>{item.action}</td>
-                                                <td className="text-muted" style={{fontSize: '0.85rem'}}>
-                                                    {formatDate(item.time)}
-                                                </td>
-                                                <td>
-                                                    <span className={`status-badge ${item.status.toLowerCase()}`}>
-                                                        {item.status}
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        ))
-                                    )}
-                                </tbody>
-                            </table>
+                            <div className="table-responsive">
+                                <table className="dashboard-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>User</th>
+                                            <th>Action</th>
+                                            <th>Time</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {recentActivity.length === 0 ? (
+                                            <tr><td colSpan="5">No recent activity found.</td></tr>
+                                        ) : (
+                                            recentActivity.map((item, index) => (
+                                                <tr key={index}>
+                                                    <td data-label="Type">
+                                                        {item.type === "Document" ? 
+                                                            <FileText size={16} className="text-muted"/> : 
+                                                            <MessageCircle size={16} className="text-muted"/>
+                                                        }
+                                                    </td>
+                                                    <td data-label="User" className="fw-500">{item.user}</td>
+                                                    <td data-label="Action">{item.action}</td>
+                                                    <td data-label="Time" className="text-muted" style={{fontSize: '0.85rem'}}>
+                                                        {formatDate(item.time)}
+                                                    </td>
+                                                    <td data-label="Status">
+                                                        <span className={`status-badge ${item.status.toLowerCase()}`}>
+                                                            {item.status}
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            ))
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
                         )}
                     </div>
 

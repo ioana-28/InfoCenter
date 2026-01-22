@@ -244,3 +244,114 @@
 .btn-confirm-reject:hover {
   background: #dc2626;
 }
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .document-requests-page {
+        overflow: visible;
+    }
+
+    .requests-table {
+        background: transparent;
+        box-shadow: none;
+        display: block;
+        width: 100%;
+    }
+
+    .requests-table thead {
+        display: none;
+    }
+
+    .requests-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .requests-table tr {
+        background: white;
+        display: block;
+        margin-bottom: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e2e8f0;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .requests-table td {
+        display: block;
+        text-align: left;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #f1f5f9;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .requests-table td:last-child {
+        border-bottom: none;
+    }
+
+    /* Hide the expand button cell container as we'll position the button absolutely */
+    .requests-table tr td:first-child {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: auto;
+        border: none;
+        background: transparent;
+        padding: 0;
+        z-index: 10;
+    }
+
+    /* Style for fields with labels */
+    .requests-table td[data-label] {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .requests-table td[data-label]::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #64748b;
+        font-size: 0.85rem;
+        flex-basis: 40%;
+    }
+
+    /* Make actions full width */
+    .requests-table td[data-label="Actions"] {
+        display: block;
+    }
+    
+    .requests-table td[data-label="Actions"]::before {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .requests-table td[data-label="Actions"] > div {
+        display: flex;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .btn-approve, .btn-reject {
+        flex: 1;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    /* Details row special handling */
+    .requests-table tr.details-row {
+        margin-top: -12px;
+        border-top: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background: #f8fafc;
+    }
+    
+    .requests-table tr.details-row td {
+        background: transparent;
+    }
+}
